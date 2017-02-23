@@ -47,12 +47,12 @@ public class Ship {
 	 *  
 	 * @param  position
 	 *         The position to check.
-	 * @return true if both coordinates are finite numbers.
-	 * 			false if at least one coordinate is Nan or Double.POSITIVE_INFINTY or Double.NEGATIVE_INFINITY.
-	 *       	| result == (! Double.isFinite(position[0])) || (! Double.isFinite(position[1]))
+	 * @return true if position has length 2 and both coordinates are finite numbers.
+	 * 			false if postition.length is not 2 or at least one coordinate is Nan or Double.POSITIVE_INFINTY or Double.NEGATIVE_INFINITY.
+	 *       	| result == (position.length == 2) && Double.isFinite(position[0]) && Double.isFinite(position[1])
 	*/
 	public static boolean isValidPosition(double[] position) {
-		return (! Double.isFinite(position[0])) || (! Double.isFinite(position[1]));
+		return (position.length == 2) && Double.isFinite(position[0]) && Double.isFinite(position[1]);
 	}
 	
 	/**
@@ -77,5 +77,5 @@ public class Ship {
 	/**
 	 * Variable registering the position of this ship.
 	 */
-	private double[] position = new double[2];
+	private double[] position;
 }
