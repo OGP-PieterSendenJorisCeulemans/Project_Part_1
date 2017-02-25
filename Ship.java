@@ -107,9 +107,6 @@ public class Ship {
 	 */
 	private double[] position;
 	
-	/**
-
-	 */
 
 	/**
 	 * Initialize this new ship with given velocity.
